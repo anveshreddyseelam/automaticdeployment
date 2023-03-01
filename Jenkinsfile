@@ -9,7 +9,7 @@ pipeline {
         stage('git Repo Pull'){
             steps{
                 
-                 git credentialsId: 'anveshreddyanvesh', url: 'https://github.com/anveshreddyseelam/automaticdeployment.git'
+                 git credentialsId: 'Github-login', url: 'https://github.com/anveshreddyseelam/automaticdeployment.git'
             }
         }
         stage('maven clean'){
