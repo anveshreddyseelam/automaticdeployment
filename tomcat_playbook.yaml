@@ -1,0 +1,27 @@
+---
+- name: this playbook is for installing tomcat service
+  hosts: all_slaves
+
+  tasks:
+    - name: to check tomcat service is installed or not
+      stat: 
+        path: /usr/share/tomcat
+      register: tom_var
+
+    - name: to display tom_var inf
+      debug:
+        var: tom_var
+
+    - name: to display TOmcat Installed msg
+      debug:
+        msg: Tomcat service is installed
+      when: tom_var.stat.exists == true
+    
+    - name: to deploy app
+      copy:
+        src: target/mvn-hello-world.war
+        dest: /usr/share/tomcat/webapps/
+        mode: 0777
+        group: root
+        owner: root
+
