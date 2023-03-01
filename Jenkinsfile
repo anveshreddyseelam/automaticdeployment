@@ -8,9 +8,8 @@ pipeline {
     stages{
         stage('git Repo Pull'){
             steps{
-                sh 'git --version'
-                sh 'whereis git'
-                sh "git credentialsId: 'anveshreddyanvesh', url: 'https://github.com/anveshreddyseelam/automaticdeployment.git'"
+                
+                 git credentialsId: 'anveshreddyanvesh', url: 'https://github.com/anveshreddyseelam/automaticdeployment.git'
             }
         }
         stage('maven clean'){
