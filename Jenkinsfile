@@ -10,7 +10,7 @@ pipeline {
             steps{
                 sh 'git --version'
                 sh 'whereis git'
-                git 'https://github.com/anveshreddyseelam/automaticdeployment.git'
+                git 'git credentialsId: 'anveshreddyanvesh', url: 'https://github.com/anveshreddyseelam/automaticdeployment.git''
             }
         }
         stage('maven clean'){
