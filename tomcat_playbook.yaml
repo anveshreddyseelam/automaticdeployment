@@ -1,6 +1,8 @@
 ---
 - name: this playbook is for installing tomcat service
   hosts: all_slaves
+  become: yes 
+  become_user: root 
 
   tasks:
     - name: to check tomcat service is installed or not
